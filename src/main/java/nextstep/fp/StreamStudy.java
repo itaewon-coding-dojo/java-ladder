@@ -23,7 +23,13 @@ public class StreamStudy {
                 .get("src/main/resources/fp/war-and-peace.txt")), StandardCharsets.UTF_8);
         List<String> words = Arrays.asList(contents.split("[\\P{L}]+"));
 
-        // TODO 이 부분에 구현한다.
+        words.stream()
+                .filter(v -> v.length() > 12)
+                .sorted((a, b) -> b.length() - a.length())
+                .distinct()
+                .collect(Collectors.toList())
+                .subList(0, 100)
+                .forEach(v -> System.out.println(v.toLowerCase()));
     }
 
     public static List<Integer> doubleNumbers(List<Integer> numbers) {
