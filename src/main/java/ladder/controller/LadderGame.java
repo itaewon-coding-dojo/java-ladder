@@ -1,11 +1,11 @@
 package ladder.controller;
 
-import ladder.domain.PlayersName;
+import ladder.domain.UsersNameReader;
 import ladder.view.Input;
 
 public class LadderGame {
     public static void main(String[] args) {
-        PlayersName playersName = Input.getPlayersName();
+        UsersNameReader usersNameReader = Input.getPlayersName();
 
     }
 }

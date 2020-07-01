@@ -5,16 +5,16 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class PlayersName {
+public class UsersNameReader {
     private final String names;
 
-    private PlayersName(String names) {
+    private UsersNameReader(String names) {
         this.validator(names);
         this.names = names;
     }
 
-    public static PlayersName from(String names) {
-        return new PlayersName(names);
+    public static UsersNameReader from(String names) {
+        return new UsersNameReader(names);
     }
 
     private void validator(String names) {
