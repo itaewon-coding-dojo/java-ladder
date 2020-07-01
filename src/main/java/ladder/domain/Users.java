@@ -7,12 +7,12 @@ import java.util.stream.Collectors;
 public class Users {
     private final List<User> users;
 
-    private Users(String names) {
-        this.users = Arrays.stream(names.split(",")).map(User::from).collect(Collectors.toList());
+    private Users(List<User> users) {
+        this.users = users;
     }
 
-    public static Users from(String names) {
-        return new Users(names);
+    public static Users from(List<User> users) {
+        return new Users(users);
     }
 
     @Override

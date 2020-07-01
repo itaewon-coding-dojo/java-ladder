@@ -1,6 +1,9 @@
 package ladder.domain;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class PlayersName {
     private final String names;
@@ -25,5 +28,13 @@ public class PlayersName {
                 throw new IllegalArgumentException();
             }
         };
+    }
+
+    public Users getUsers() {
+        List<User> userNames = Arrays.stream(this.names.split(","))
+                .map(User::from)
+                .collect(Collectors.toList());
+
+        return Users.from(userNames);
     }
 }
