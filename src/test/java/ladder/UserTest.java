@@ -10,7 +10,7 @@ public class UserTest {
     @Test
     @DisplayName("toString")
     void toStringMethod() {
-        User user = User.from("din");
+        User user = User.newInstance("din");
 
         assertThat(user.toString()).isEqualTo("  din");
     }

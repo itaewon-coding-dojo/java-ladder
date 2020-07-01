@@ -11,20 +11,20 @@ public class UsersNameReaderTest {
     @Test
     void nullCheck() {
         assertThatThrownBy(() -> {
-            UsersNameReader usersNameReader = UsersNameReader.from(null);
+            UsersNameReader usersNameReader = UsersNameReader.newInstace(null);
         }).isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
     void invalidNames() {
         assertThatThrownBy(() -> {
-            UsersNameReader usersNameReader = UsersNameReader.from("john,christina");
+            UsersNameReader usersNameReader = UsersNameReader.newInstace("john,christina");
         }).isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
     void getUsers() {
-        UsersNameReader usersNameReader = UsersNameReader.from("john,tom,jenny");
+        UsersNameReader usersNameReader = UsersNameReader.newInstace("john,tom,jenny");
 
         Users users = usersNameReader.convertNamesToUsers();
 

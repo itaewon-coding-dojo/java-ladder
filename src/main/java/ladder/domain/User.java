@@ -8,7 +8,7 @@ public class User {
         this.name = name;
     }
 
-    public static User from(String name) {
+    public static User newInstance(String name) {
         return new User(name);
     }
 

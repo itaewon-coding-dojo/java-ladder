@@ -11,7 +11,7 @@ public class UsersTest {
     @Test
     @DisplayName("toString")
     void toStringMethod() {
-        Users users = UsersNameReader.from("john,james,tom,buddy,din").convertNamesToUsers();
+        Users users = UsersNameReader.newInstace("john,james,tom,buddy,din").convertNamesToUsers();
 
         assertThat(users.toString()).isEqualTo(" john  james    tom  buddy    din  ");
     }

@@ -11,7 +11,7 @@ public class Users {
         this.users = users;
     }
 
-    public static Users from(List<User> users) {
+    public static Users newInstance(List<User> users) {
         return new Users(users);
     }
 

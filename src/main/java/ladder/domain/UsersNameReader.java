@@ -13,7 +13,7 @@ public class UsersNameReader {
         this.names = names;
     }
 
-    public static UsersNameReader from(String names) {
+    public static UsersNameReader newInstace(String names) {
         return new UsersNameReader(names);
     }
 
@@ -32,9 +32,9 @@ public class UsersNameReader {
 
     public Users convertNamesToUsers() {
         List<User> userNames = Arrays.stream(this.names.split(","))
-                .map(User::from)
+                .map(User::newInstance)
                 .collect(Collectors.toList());
 
-        return Users.from(userNames);
+        return Users.newInstance(userNames);
     }
 }
