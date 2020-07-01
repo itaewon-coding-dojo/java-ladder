@@ -26,7 +26,7 @@ public class UsersNameReaderTest {
     void getUsers() {
         UsersNameReader usersNameReader = UsersNameReader.from("john,tom,jenny");
 
-        Users users = usersNameReader.getUsers();
+        Users users = usersNameReader.convertNamesToUsers();
 
         assertThat(users.toString()).isEqualTo(" john    tom  jenny  ");
     }

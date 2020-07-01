@@ -30,7 +30,7 @@ public class UsersNameReader {
         };
     }
 
-    public Users getUsers() {
+    public Users convertNamesToUsers() {
         List<User> userNames = Arrays.stream(this.names.split(","))
                 .map(User::from)
                 .collect(Collectors.toList());
