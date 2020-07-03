@@ -22,4 +22,8 @@ public class Users {
 
         return result.toString();
     }
+
+    public int getNumberOfUsers() {
+        return users.size();
+    }
 }
