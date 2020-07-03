@@ -2,7 +2,7 @@ package ladder.domain;
 
 public class User {
     private final String name;
-    private final int LIMITED_NUMBER_OF_CHARACTERS = 5;
+    private final int MAX_NUMBER_OF_CHARACTERS = 5;
 
     private User(String name) {
         this.name = name;
@@ -14,7 +14,7 @@ public class User {
 
     @Override
     public String toString() {
-        int blankCount = LIMITED_NUMBER_OF_CHARACTERS - name.length();
+        int blankCount = MAX_NUMBER_OF_CHARACTERS - name.length();
 
         return " ".repeat(Math.max(0, blankCount)) + name;
     }
