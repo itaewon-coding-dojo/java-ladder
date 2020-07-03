@@ -11,4 +11,11 @@ public class Input {
 
         return UsersNameReader.newInstace(scanner.nextLine());
     }
+
+    public static int getHeightOfLadder() {
+        System.out.println("최대 사다리 높이는 몇 개 인가요?");
+        Scanner scanner = new Scanner(System.in);
+
+        return scanner.nextInt();
+    }
 }

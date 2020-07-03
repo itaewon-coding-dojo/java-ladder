@@ -9,5 +9,6 @@ public class LadderGame {
         UsersNameReader usersNameReader = Input.getUsersName();
         Users users = usersNameReader.convertNamesToUsers();
 
+
     }
 }
