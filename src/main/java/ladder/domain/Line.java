@@ -3,13 +3,13 @@ package ladder.domain;
 import java.util.List;
 
 public class Line {
-    private final List<Integer> bridgeStates;
+    private final List<Boolean> bridgeStates;
 
-    public static Line newInstance(List<Integer> bridgeStates) {
+    public static Line newInstance(List<Boolean> bridgeStates) {
         return new Line(bridgeStates);
     }
 
-    public Line(List<Integer> bridgeStates) {
+    public Line(List<Boolean> bridgeStates) {
         this.bridgeStates = bridgeStates;
     }
 
@@ -17,7 +17,7 @@ public class Line {
     public String toString() {
         StringBuilder result = new StringBuilder();
 
-        for (int state : bridgeStates) {
+        for (Boolean state : bridgeStates) {
             appendColumn(result);
             appendBridge(result, state);
         }
@@ -30,12 +30,12 @@ public class Line {
         result.append("|");
     }
 
-    private void appendBridge(StringBuilder result, int state) {
-        if (state == 1) {
+    private void appendBridge(StringBuilder result, Boolean state) {
+        if (state) {
             result.append("----");
         }
 
-        if (state == 0) {
+        if (!state) {
             result.append("    ");
         }
     }

@@ -12,7 +12,7 @@ public class LineTest {
     @Test
     @DisplayName("toString")
     void toStringMethod() {
-        List<Integer> bridgeStates = List.of(1, 0);
+        List<Boolean> bridgeStates = List.of(true, false);
 
         Line line = Line.newInstance(bridgeStates);
 
