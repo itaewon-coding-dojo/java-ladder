@@ -9,6 +9,6 @@ public class LadderGame {
         UsersNameReader usersNameReader = Input.getUsersName();
         Users users = usersNameReader.convertNamesToUsers();
 
-
+        int time = Input.getHeightOfLadder();
     }
 }
