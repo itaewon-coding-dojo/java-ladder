@@ -14,9 +14,7 @@ public class BridgeGeneratorTest {
         int heightOfLadder = 3;
         BridgeGenerator bridgeGenerator = BridgeGenerator.newInstance(numberOfUsers, heightOfLadder);
 
-        bridgeGenerator.add(List.of(true, false, true, false));
-        bridgeGenerator.add(List.of(true, false, false, true));
-        bridgeGenerator.add(List.of(false, true, false, true));
+        bridgeGenerator.create();
 
         assertThat(bridgeGenerator.getBridgeStates()).hasSize(3);
     }

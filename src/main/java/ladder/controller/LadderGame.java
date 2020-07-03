@@ -6,21 +6,15 @@ import ladder.domain.UsersNameReader;
 import ladder.view.Input;
 import ladder.view.Output;
 
-import java.util.List;
-
 public class LadderGame {
     public static void main(String[] args) {
         UsersNameReader usersNameReader = Input.getUsersName();
         Users users = usersNameReader.convertNamesToUsers();
 
-        int time = Input.getHeightOfLadder();
-        BridgeGenerator bridgeGenerator = BridgeGenerator.newInstance(users.getNumberOfUsers(), time);
+        BridgeGenerator bridgeGenerator =
+                BridgeGenerator.newInstance(users.getNumberOfUsers(), Input.getHeightOfLadder());
 
-        bridgeGenerator.add(List.of(true, false, true));
-        bridgeGenerator.add(List.of(false, true, false));
-        bridgeGenerator.add(List.of(true, false, false));
-        bridgeGenerator.add(List.of(false, true, false));
-        bridgeGenerator.add(List.of(true, false, true));
+        bridgeGenerator.create();
 
         Output.showUserNames(users);
         Output.showResult(bridgeGenerator.getBridgeStates());
