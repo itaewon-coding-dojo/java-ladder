@@ -23,7 +23,7 @@ public class Line {
         }
         appendColumn(result);
 
-        return String.valueOf(result);
+        return "  " + String.valueOf(result);
     }
 
     private void appendColumn(StringBuilder result) {
@@ -32,11 +32,11 @@ public class Line {
 
     private void appendBridge(StringBuilder result, Boolean state) {
         if (state) {
-            result.append("----");
+            result.append("------");
         }
 
         if (!state) {
-            result.append("    ");
+            result.append("      ");
         }
     }
 }
