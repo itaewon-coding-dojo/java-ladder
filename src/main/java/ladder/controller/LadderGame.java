@@ -11,6 +11,8 @@ public class LadderGame {
         UsersNameReader usersNameReader = Input.getUsersName();
         Users users = usersNameReader.convertNamesToUsers();
 
+        String executionResult = Input.getExecutionResult();
+
         BridgeGenerator bridgeGenerator =
                 BridgeGenerator.newInstance(users.getNumberOfUsers(), Input.getHeightOfLadder());
 
