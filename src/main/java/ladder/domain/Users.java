@@ -13,6 +13,10 @@ public class Users {
         return new Users(users);
     }
 
+    public User get(int index) {
+        return this.users.get(index);
+    }
+
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();

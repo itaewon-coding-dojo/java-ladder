@@ -13,6 +13,14 @@ public class Line {
         this.bridgeStates = bridgeStates;
     }
 
+    public Boolean get(int index) {
+        return bridgeStates.get(index);
+    }
+
+    public int size() {
+        return bridgeStates.size();
+    }
+
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();

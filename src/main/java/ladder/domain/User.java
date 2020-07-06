@@ -12,6 +12,10 @@ public class User {
         return new User(name);
     }
 
+    public String getName() {
+        return this.name;
+    }
+
     @Override
     public String toString() {
         int blankCount = MAX_NUMBER_OF_CHARACTERS - name.length();

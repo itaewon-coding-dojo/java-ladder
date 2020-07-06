@@ -1,6 +1,7 @@
 package ladder.controller;
 
 import ladder.domain.BridgeGenerator;
+import ladder.domain.ExpectingResultReader;
 import ladder.domain.Users;
 import ladder.domain.UsersNameReader;
 import ladder.view.Input;
@@ -11,7 +12,8 @@ public class LadderGame {
         UsersNameReader usersNameReader = Input.getUsersName();
         Users users = usersNameReader.convertNamesToUsers();
 
-        String expectingResult = Input.getExectingResult();
+        ExpectingResultReader expectingResultReader =
+                ExpectingResultReader.newInstance(Input.getExectingResult());
 
         BridgeGenerator bridgeGenerator =
                 BridgeGenerator.newInstance(users.getNumberOfUsers(), Input.getHeightOfLadder());
