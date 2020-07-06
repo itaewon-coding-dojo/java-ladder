@@ -4,8 +4,6 @@ import ladder.domain.*;
 import ladder.view.Input;
 import ladder.view.Output;
 
-import java.util.Map;
-
 public class LadderGame {
     public static void main(String[] args) {
         UsersNameReader usersNameReader = Input.getUsersName();
@@ -22,7 +20,7 @@ public class LadderGame {
         winnerDto.add(users, expectingResultReader.convertToResultData(), bridgeGenerator.getBridgeStates());
 
         WinningChecker winningChecker = WinningChecker.newInstance();
-        Map<String, Integer> winners = winningChecker.checkWinners(winnerDto);
+        Winners winners = Winners.newInstance(winningChecker.checkWinners(winnerDto));
 
         Output.showUserNames(users);
         Output.showResult(bridgeGenerator.getBridgeStates());

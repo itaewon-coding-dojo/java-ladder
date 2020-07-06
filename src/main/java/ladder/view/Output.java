@@ -2,9 +2,9 @@ package ladder.view;
 
 import ladder.domain.Line;
 import ladder.domain.Users;
+import ladder.domain.Winners;
 
 import java.util.List;
-import java.util.Map;
 
 public class Output {
     public static void showUserNames(Users users) {
@@ -15,9 +15,9 @@ public class Output {
         bridgeStates.forEach(v -> System.out.println(v.toString()));
     }
 
-    public static void showWinners(Map<String, Integer> winners) {
+    public static void showWinners(Winners winners) {
         System.out.println("");
-        winners.forEach((key, value) -> {
+        winners.getWinners().forEach((key, value) -> {
             if (value == 0) {
                 System.out.printf("%s: %s\n", key, "꽝");
             }
