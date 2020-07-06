@@ -6,14 +6,14 @@ import java.util.List;
 import java.util.Random;
 
 public class BridgeGenerator {
-    private final PartsOfLadder ladderParts;
+    private final LadderMaterial ladderParts;
     private final List<Line> bridgeStates = new ArrayList<>();
 
-    public BridgeGenerator(PartsOfLadder ladderParts) {
+    public BridgeGenerator(LadderMaterial ladderParts) {
         this.ladderParts = ladderParts;
     }
 
-    public static BridgeGenerator newInstance(PartsOfLadder ladderParts) {
+    public static BridgeGenerator newInstance(LadderMaterial ladderParts) {
         return new BridgeGenerator(ladderParts);
     }
 
