@@ -18,8 +18,11 @@ public class LadderGame {
         BridgeGenerator bridgeGenerator = BridgeGenerator.newInstance(ladderMaterial);
         bridgeGenerator.create();
 
+        WinnerDTO winnerDto = WinnerDTO.newInstance();
+        winnerDto.add(users, expectingResultReader.convertToResultData(), bridgeGenerator.getBridgeStates());
+
         WinningChecker winningChecker = WinningChecker.newInstance();
-        Map<String, Integer> winners = winningChecker.checkWinners(users, expectingResultReader.convertToResultData(), bridgeGenerator.getBridgeStates());
+        Map<String, Integer> winners = winningChecker.checkWinners(winnerDto);
 
         Output.showUserNames(users);
         Output.showResult(bridgeGenerator.getBridgeStates());

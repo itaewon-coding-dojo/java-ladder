@@ -9,7 +9,11 @@ public class WinningChecker {
         return new WinningChecker();
     }
 
-    public Map<String, Integer> checkWinners(Users users, List<Integer> resultData, List<Line> bridgeStates) {
+    public Map<String, Integer> checkWinners(WinnerDTO dto) {
+        Users users = dto.getUsers();
+        List<Integer> resultData = dto.getResultData();
+        List<Line> bridgeStates = dto.getBridgeStates();
+
         int[] position = new int[users.getNumberOfUsers()];
         for (int i = 0; i < position.length; i += 1) {
             position[i] = i;
