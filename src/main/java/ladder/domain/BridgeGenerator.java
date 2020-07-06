@@ -6,21 +6,19 @@ import java.util.List;
 import java.util.Random;
 
 public class BridgeGenerator {
-    private final int heigthOfLadder;
-    private final int numberOfUsers;
+    private final PartsOfLadder ladderParts;
     private final List<Line> bridgeStates = new ArrayList<>();
 
-    public BridgeGenerator(int numberOfUsers, int heightOfLadder) {
-        this.heigthOfLadder = heightOfLadder;
-        this.numberOfUsers = numberOfUsers;
+    public BridgeGenerator(PartsOfLadder ladderParts) {
+        this.ladderParts = ladderParts;
     }
 
-    public static BridgeGenerator newInstance(int numberOfUsers, int heightOfLadder) {
-        return new BridgeGenerator(numberOfUsers, heightOfLadder);
+    public static BridgeGenerator newInstance(PartsOfLadder ladderParts) {
+        return new BridgeGenerator(ladderParts);
     }
 
     public void create() {
-        for (int i = 0; i < heigthOfLadder; i += 1) {
+        for (int i = 0; i < ladderParts.getHeigthOfLadder(); i += 1) {
             Line line = Line.newInstance(makeRandomStates());
             bridgeStates.add(line);
         }
@@ -30,7 +28,7 @@ public class BridgeGenerator {
         Random random = new Random();
 
         List<Boolean> states = new ArrayList<>();
-        for (int i = 0; i < numberOfUsers - 1; i += 1) {
+        for (int i = 0; i < ladderParts.getNumberOfUsers() - 1; i += 1) {
             addState(random, states, i);
         }
 

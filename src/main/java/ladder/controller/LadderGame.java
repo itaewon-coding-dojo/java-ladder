@@ -12,8 +12,8 @@ public class LadderGame {
         ExpectingResultReader expectingResultReader =
                 ExpectingResultReader.newInstance(Input.getExectingResult());
 
-        BridgeGenerator bridgeGenerator =
-                BridgeGenerator.newInstance(users.getNumberOfUsers(), Input.getHeightOfLadder());
+        PartsOfLadder partsOfLadder = PartsOfLadder.newInstance(users.getNumberOfUsers(), Input.getHeightOfLadder());
+        BridgeGenerator bridgeGenerator = BridgeGenerator.newInstance(partsOfLadder);
 
         bridgeGenerator.create();
 

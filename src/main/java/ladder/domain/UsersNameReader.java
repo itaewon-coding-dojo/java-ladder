@@ -24,10 +24,14 @@ public class UsersNameReader {
         }
 
         for (String name : names.split(",")) {
-            if (name.length() > 5 || name.length() < 1) {
-                throw new IllegalArgumentException();
-            }
+            checkNameLength(name);
         };
+    }
+
+    private void checkNameLength(String name) {
+        if (name.length() > 5 || name.length() < 1) {
+            throw new IllegalArgumentException();
+        }
     }
 
     public Users convertNamesToUsers() {

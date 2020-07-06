@@ -16,6 +16,6 @@ public class LineTest {
 
         Line line = Line.newInstance(bridgeStates);
 
-        assertThat(line.toString()).isEqualTo("|----|    |");
+        assertThat(line.toString()).isEqualTo("  |------|      |");
     }
 }
