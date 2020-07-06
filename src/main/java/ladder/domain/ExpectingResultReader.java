@@ -8,7 +8,7 @@ public class ExpectingResultReader {
     private final String result;
 
     public ExpectingResultReader(String result) {
-        this.result = result.replaceAll("꽝", "0");
+        this.result = result;
     }
 
     public static ExpectingResultReader newInstance(String result) {
@@ -16,7 +16,7 @@ public class ExpectingResultReader {
     }
 
     public List<Integer> convertToResultData() {
-        return Arrays.stream(this.result.split(",")).mapToInt(Integer::parseInt).boxed().collect(Collectors.toList());
+        return Arrays.stream(this.result.replaceAll("꽝", "0").split(",")).mapToInt(Integer::parseInt).boxed().collect(Collectors.toList());
     }
 
     @Override

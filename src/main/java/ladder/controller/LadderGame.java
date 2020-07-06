@@ -22,6 +22,8 @@ public class LadderGame {
         Output.showUserNames(users);
         Output.showResult(bridgeGenerator.getBridgeStates());
         Output.showExpecting(expectingResultReader.toString());
-        Output.showWinners(winningChecker.checkWinners(users, expectingResultReader.convertToResultData(), bridgeGenerator.getBridgeStates()));
+        Output.showWinners(winningChecker.checkWinners(
+                users, expectingResultReader.convertToResultData(), bridgeGenerator.getBridgeStates()
+        ));
     }
 }

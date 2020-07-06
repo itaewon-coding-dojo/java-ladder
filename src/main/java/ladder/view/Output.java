@@ -17,7 +17,12 @@ public class Output {
 
     public static void showWinners(Map<String, Integer> winners) {
         System.out.println("");
-        winners.forEach((key, value) -> System.out.printf("%s: %d\n", key, value));
+        winners.forEach((key, value) -> {
+            if (value == 0) {
+                System.out.printf("%s: %s\n", key, "꽝");
+            }
+            System.out.printf("%s: %d\n", key, value);
+        });
     }
 
     public static void showExpecting(String data) {
