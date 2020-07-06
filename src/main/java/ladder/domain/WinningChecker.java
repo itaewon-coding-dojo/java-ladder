@@ -14,15 +14,13 @@ public class WinningChecker {
         List<Integer> resultData = dto.getResultData();
         List<Line> bridgeStates = dto.getBridgeStates();
 
-        int[] position = new int[users.getNumberOfUsers()];
-        for (int i = 0; i < position.length; i += 1) {
-            position[i] = i;
-        }
+        int[] position = getIndexElementsArray(users);
+        executeLadderGameLogic(bridgeStates, position);
 
-        for (Line state : bridgeStates) {
-            swapPositionInLine(position, state);
-        }
+        return compilePosition(users, resultData, position);
+    }
 
+    private Map<String, Integer> compilePosition(Users users, List<Integer> resultData, int[] position) {
         Map<String, Integer> resultPosition = new HashMap<>();
         for (int i = 0; i < position.length; i += 1) {
             String userName = users.get(i).getName();
@@ -30,8 +28,21 @@ public class WinningChecker {
 
             resultPosition.put(userName, winning);
         }
-
         return resultPosition;
+    }
+
+    private void executeLadderGameLogic(List<Line> bridgeStates, int[] position) {
+        for (Line state : bridgeStates) {
+            swapPositionInLine(position, state);
+        }
+    }
+
+    private int[] getIndexElementsArray(Users users) {
+        int[] position = new int[users.getNumberOfUsers()];
+        for (int i = 0; i < position.length; i += 1) {
+            position[i] = i;
+        }
+        return position;
     }
 
     private void swapPositionInLine(int[] position, Line state) {
