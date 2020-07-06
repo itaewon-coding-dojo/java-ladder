@@ -1,9 +1,6 @@
 package ladder.controller;
 
-import ladder.domain.BridgeGenerator;
-import ladder.domain.ExpectingResultReader;
-import ladder.domain.Users;
-import ladder.domain.UsersNameReader;
+import ladder.domain.*;
 import ladder.view.Input;
 import ladder.view.Output;
 
@@ -20,7 +17,11 @@ public class LadderGame {
 
         bridgeGenerator.create();
 
+        WinningChecker winningChecker = WinningChecker.newInstance();
+
         Output.showUserNames(users);
         Output.showResult(bridgeGenerator.getBridgeStates());
+        Output.showExpecting(expectingResultReader.toString());
+        Output.showWinners(winningChecker.checkWinners(users, expectingResultReader.convertToResultData(), bridgeGenerator.getBridgeStates()));
     }
 }

@@ -18,4 +18,11 @@ public class ExpectingResultReader {
     public List<Integer> convertToResultData() {
         return Arrays.stream(this.result.split(",")).mapToInt(Integer::parseInt).boxed().collect(Collectors.toList());
     }
+
+    @Override
+    public String toString() {
+        String[] results = this.result.split(",");
+
+        return String.join("   ", results);
+    }
 }
